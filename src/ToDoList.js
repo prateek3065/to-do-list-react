@@ -49,6 +49,7 @@ export default function ToDoList() {
     //console.log("inside delete");
     const newStoredTodo = storedTodo.filter((element) => {
       if (element.id !== id) return element;
+      return null;
     });
     setStoredTodo(newStoredTodo);
   };
@@ -67,7 +68,7 @@ export default function ToDoList() {
 
   var handleUpdate = (id, updatedTodo) => {
     const newStoredTodo = [...storedTodo];
-    console.log(`id=${id} updatedTodo=${updatedTodo}`);
+    // console.log(`id=${id} updatedTodo=${updatedTodo}`);
     for (let i = 0; i < newStoredTodo.length; i++) {
       if (newStoredTodo[i].id === id) {
         newStoredTodo[i].name = updatedTodo;
@@ -78,7 +79,7 @@ export default function ToDoList() {
     setStoredTodo(newStoredTodo);
   };
 
-  console.log(storedTodo);
+  //console.log(storedTodo);
   return (
     <div>
       <div className="to-do-list">
